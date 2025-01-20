@@ -26,6 +26,10 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: 'sbt'
+    - name: Install sbt
+      uses: coursier/setup-action@v1
+      with:
+        apps: sbt
     - name: Import GPG Key
       uses: crazy-max/ghaction-import-gpg@v6
       with:

@@ -35,13 +35,8 @@ jobs:
       with:
         gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
-    - name: Publish
-      run: sbt clean publishSigned
-      env:
-        PUBLISH_USER: ${{secrets.PUBLISH_USER}}
-        PUBLISH_PASSWORD: ${{secrets.PUBLISH_PASSWORD}}
-    - name: Upload to Maven Central
-      run: sbt sonaUpload
+    - name: Publish and Upload to Sonatype
+      run: sbt clean publishSigned sonaUpload
       env:
         PUBLISH_USER: ${{secrets.PUBLISH_USER}}
         PUBLISH_PASSWORD: ${{secrets.PUBLISH_PASSWORD}}

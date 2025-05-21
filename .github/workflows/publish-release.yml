@@ -42,3 +42,6 @@ jobs:
         PUBLISH_PASSWORD: ${{secrets.PUBLISH_PASSWORD}}
     - name: Upload to Maven Central
       run: sbt sonaUpload
+      env:
+        PUBLISH_USER: ${{secrets.PUBLISH_USER}}
+        PUBLISH_PASSWORD: ${{secrets.PUBLISH_PASSWORD}}
